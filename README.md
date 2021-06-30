@@ -3,7 +3,7 @@
 
 [![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
 [![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/coopgo/gtfs.svg)](https://github.com/coopgo/gtfs)
-[![GoReportCard example](https://goreportcard.com/badge/github.com/coopgo/gtfs)](https://goreportcard.com/report/github.com/coopgo/gtfs)
+[![go.dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white)](https://pkg.go.dev/github.com/coopgo/gtfs)
 
 Package `coopgo/gtfs` implements a GTFS parser to load and exploit GTFS feeds.
 
