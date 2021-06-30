@@ -148,16 +148,25 @@ func getFloat(str string, req bool, empty float64) (float64, error) {
 }
 
 func getDate(str string, req bool) (Date, error) {
-	if str == "" && req {
-		return DateEmpty, errors.New("empty value while required")
+	if str == "" {
+		if req {
+			return DateEmpty, errors.New("empty value while required")
+		} else {
+			return DateEmpty, nil
+		}
 	}
 
 	return ParseDate(str)
 }
 
 func getTime(str string, req bool) (Time, error) {
-	if str == "" && req {
-		return TimeEmpty, errors.New("empty value while required")
+	if str == "" {
+		if req {
+			return TimeEmpty, errors.New("empty value while required")
+		} else {
+			return TimeEmpty, nil
+		}
+
 	}
 
 	return ParseTime(str)

@@ -176,11 +176,11 @@ import "errors"
 // {{.Struct}} GENERATED CODE
 //
 // Generated init and unmarshal function for {{.Struct}} struct
-// These functions sould be used to do a mapping between a slice of string
+// These functions should be used to do a mapping between a slice of string
 // and this struct. 
 // ************************************************************************** //
 
-// init initalizes the values which have a gtfs empty value different from the 
+// init initializes the values which have a gtfs empty value different from the 
 // golang zero value or if it's type is a custom one (for example Date).
 func (item *{{.Struct}}) init() { 
 	{{range .Fields}}
@@ -192,7 +192,7 @@ func (item *{{.Struct}}) init() {
 // unmarshal takes a header slice which contains the gtfs tag of the field and a
 // slice with contains the values of these fields.
 // unmarshal makes the conversion of the d values in the correct type and check 
-// the presence of required fields (not conditionnal required fields).
+// the presence of required fields (not conditional required fields).
 func (item *{{.Struct}}) unmarshal(h []string, d []string) error {
 	var err error
 

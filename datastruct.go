@@ -86,11 +86,13 @@ func (feed *Feed) String() string {
 
 }
 
+// TODO: Unlink transforms a Feed into a FeedSerializable
 func (feed *Feed) Unlink() (*FeedSerializable, error) {
 	u := unlinker{}
 	return u.Unlink(feed)
 }
 
+// FareRules exports all FareRule from a Feed into an array.
 func (feed *Feed) FareRules() []*FareRule {
 	buff := make([]*FareRule, 0)
 
@@ -101,6 +103,7 @@ func (feed *Feed) FareRules() []*FareRule {
 	return buff
 }
 
+// StopTimes exports all StopTime from a Feed into an array.
 func (feed *Feed) StopTimes() []*StopTime {
 	buff := make([]*StopTime, 0)
 
@@ -111,6 +114,7 @@ func (feed *Feed) StopTimes() []*StopTime {
 	return buff
 }
 
+// Agency is a unique transit agency
 type Agency struct {
 	// Identifies a unique transit agency.
 	// +conditionnally required - This field is required when the dataset
@@ -149,13 +153,14 @@ type Agency struct {
 	Email string `gtfs:"agency_email"`
 }
 
-// TODO: add reference to stops and rules
+// Zone is a fare zone.
 type Zone struct {
 	// Identifies a fare zone.
 	// +required
 	Id string `gtfs:"zone_id"`
 }
 
+// Stop is a stop, station, or station entrance.
 type Stop struct {
 
 	// Identifies a stop, station, or station entrance.
@@ -232,6 +237,7 @@ type Stop struct {
 	TransfersTo map[string]*Transfer
 }
 
+// Route is a GTFS route.
 type Route struct {
 	// Identifies a route.
 	// +required
@@ -305,6 +311,7 @@ type Block struct {
 	Id string
 }
 
+// Trip is a GTFS trip.
 type Trip struct {
 	// Identifies a trip.
 	// +required
@@ -364,6 +371,7 @@ type Trip struct {
 	StopTimes []*StopTime
 }
 
+// StopTime is
 type StopTime struct {
 	// Identifies a trip.
 	// +required
